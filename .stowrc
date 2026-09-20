@@ -1,0 +1,3 @@
+--dir /home/jekkey/.config/dotfiles
+--target /home/jekkey
+--dotfiles
