@@ -1,0 +1,12 @@
+term=kitty
+insensitive=true
+no_actions=false
+
+allow_images=true
+image_size=20
+
+location=center
+width=720
+columns=1
+lines=14
+halign=start
