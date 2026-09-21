@@ -176,7 +176,7 @@ hl.config({
 				kb_layout  = "de",
         kb_variant = "nodeadkeys",
         kb_model   = "",
-        kb_options = "caps:escape,kpdl:dot,lv3:lalt_switch",
+        kb_options = "caps:escape,kpdl:dot,lv3:lalt_switch,lv3:ralt_alt",
         kb_rules   = "",
 				
 				numlock_by_default = true,
