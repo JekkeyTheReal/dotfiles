@@ -1,0 +1,9 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR __fish_initialized:4300
+SETUVAR __fish_webconfig_theme_notification:set\x2dtheme\x2dv1\x2d\x239
+SETUVAR fish_color_command:green
+SETUVAR fish_color_cwd:blue
+SETUVAR fish_color_error:red
+SETUVAR fish_color_operator:magenta
+SETUVAR fish_color_param:cyan
