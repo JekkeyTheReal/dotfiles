@@ -1,0 +1,12 @@
+image=$HOME/Pictures/wallpapers/fedora_wallpaper-blur.png
+scaling=fill
+
+line-uses-ring
+inside-color=000000a0
+inside-clear-color=a000a0a0
+inside-ver-color=5050a0a0
+ring-color=000000a0
+ring-clear-color=a000a0a0
+ring-ver-color=5050a0a0
+text-color=dddddd
+text-ver-color=dddddd
