@@ -1,3 +1,10 @@
+### Monitors ###
+
+output eDP-1 scale 1.25 position 0 0
+
+
+### Variables ###
+
 # modifier
 set $mod Mod4
 set $modA Shift
@@ -6,8 +13,19 @@ set $modA Shift
 set $term kitty
 
 # launcher
-set $menu wofi --show drun
+set $dmenu wofi --show drun
+set $menu wofi --show run
 
+
+### Autostart ###
+
+# swaylock on lid close
+exec swayidle -w before-sleep 'swaylock -f'
+
+# timeout kbd baclight, resumme on type
+exec swayidle -w \
+    timeout 5 "brightnessctl --device='*kbd_backlight' --save set 0" \
+    resume "brightnessctl --device='*kbd_backlight' --restore"
 
 ### Style ###
 
@@ -25,8 +43,10 @@ for_window [class="^.*"] border pixel 2
 
 bindsym $mod+C kill
 bindsym $mod+Q exec $term
-bindsym $mod+D exec $menu
-bindsym $mod+R reload
+bindsym $mod+R exec $dmenu
+bindsym $mod+T exec $menu
+bindsym $mod+L reload
+bindsym $mod+E exec thunar
 
 # move focus
 bindsym $mod+Left 	focus left
@@ -35,10 +55,18 @@ bindsym $mod+Up 		focus up
 bindsym $mod+Down 	focus down
 
 # move window
-bindsym $mod+Ctrl+Left 	move left
-bindsym $mod+Ctrl+Right move right
-bindsym $mod+Ctrl+Up 		move up
-bindsym $mod+Ctrl+Down 	move down
+bindsym $mod+$modA+Left 	move left
+bindsym $mod+$modA+Right move right
+bindsym $mod+$modA+Up 		move up
+bindsym $mod+$modA+Down 	move down
+
+# function keys
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 
 
 ### Layout ###
@@ -59,7 +87,7 @@ bindsym $mod+a focus parent
 # layout modes
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+t layout toggle split
+bindsym $mod+z layout toggle split
 
 
 ### Workspaces ###
@@ -75,16 +103,16 @@ bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
 
-bindsym $mod+$modA+1 move container to workspace number 1
-bindsym $mod+$modA+2 move container to workspace number 2
-bindsym $mod+$modA+3 move container to workspace number 3
-bindsym $mod+$modA+4 move container to workspace number 4
-bindsym $mod+$modA+5 move container to workspace number 5
-bindsym $mod+$modA+6 move container to workspace number 6
-bindsym $mod+$modA+7 move container to workspace number 7
-bindsym $mod+$modA+8 move container to workspace number 8
-bindsym $mod+$modA+9 move container to workspace number 9
-bindsym $mod+$modA+0 move container to workspace number 10
+bindsym $mod+$modA+1 move container to workspace number 1, workspace number 1
+bindsym $mod+$modA+2 move container to workspace number 2, workspace number 2
+bindsym $mod+$modA+3 move container to workspace number 3, workspace number 3
+bindsym $mod+$modA+4 move container to workspace number 4, workspace number 4
+bindsym $mod+$modA+5 move container to workspace number 5, workspace number 5
+bindsym $mod+$modA+6 move container to workspace number 6, workspace number 6
+bindsym $mod+$modA+7 move container to workspace number 7, workspace number 7
+bindsym $mod+$modA+8 move container to workspace number 8, workspace number 8
+bindsym $mod+$modA+9 move container to workspace number 9, workspace number 9
+bindsym $mod+$modA+0 move container to workspace number 10, workspace number 10
 
 
 ### Bar ###
@@ -96,7 +124,7 @@ bar {
 
 ### Wallpaper ###
 
-#output * bg ~/Pictures/wallpaper.png fill
+output * bg ~/Pictures/wallpapers/fedora_wallpaper.png fill
 
 
 ### Input ###
@@ -112,7 +140,8 @@ input type:keyboard {
 }
 
 input type:touchpad {
-	natural_scroll disabled
+	natural_scroll enabled
+	tap enabled
 }
 
 input type:pointer {
