@@ -22,9 +22,9 @@ set $menu wofi --show run
 # swaylock on lid close
 exec swayidle -w before-sleep 'swaylock -f'
 
-# timeout kbd baclight, resumme on type
+# timeout kbd backlight, resumme on type
 exec swayidle -w \
-    timeout 5 "brightnessctl --device='*kbd_backlight' --save set 0" \
+    timeout 10 "brightnessctl --device='*kbd_backlight' --save set 0" \
     resume "brightnessctl --device='*kbd_backlight' --restore"
 
 ### Style ###
