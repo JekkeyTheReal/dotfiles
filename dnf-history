@@ -1,0 +1,21 @@
+ID Command line                          Date and time       Action(s) Altered
+20 dnf install audacious                 2026-09-23 22:37:37                18
+19 dnf install gitleaks                  2026-09-23 22:26:40                 1
+18 dnf install nvtop                     2026-09-23 20:15:56                 1
+17 dnf install feh                       2026-09-23 14:25:28                 4
+16 dnf install pamtester                 2026-09-23 14:08:18                 1
+15 dnf install cmake                     2026-09-23 13:48:17                 4
+14 dnf install ncdu                      2026-09-23 13:08:53                 1
+13 dnf install vulkan-tools              2026-09-22 21:34:42                 1
+12 dnf install blender                   2026-09-22 21:24:23               123
+11 dnf install vesktop-1.6.7.x86_64.rpm  2026-09-22 21:06:28                 1
+10 dnf install samba samba-client        2026-09-22 20:32:34                 6
+ 9 dnf install fish                      2026-09-22 19:55:24                 3
+ 8 dnf install btop                      2026-09-22 19:42:30                 2
+ 7 dnf install vim                       2026-09-22 19:40:36                 5
+ 6 dnf install wofi                      2026-09-22 19:32:25                 1
+ 5 dnf install stow                      2026-09-22 19:31:54                63
+ 4 dnf install kitty                     2026-09-22 19:31:32                 5
+ 3 dnf update                            2026-09-22 18:04:18              1220
+ 2 dnf5 --config /kiwi_dnf5.config -y -- 2026-04-22 14:01:06              1299
+ 1 dnf5 --config /builddir/result/image/ 2026-04-22 13:59:07               278
