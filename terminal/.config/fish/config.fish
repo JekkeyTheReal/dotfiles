@@ -4,7 +4,7 @@
 export PATH="$HOME/.local/bin:$PATH"
 
 # aliases
-alias lsa="ls -A --color=auto"
+alias band="iw dev wlp0s20f3 link | grep freq | sed -e 's/^\s*//'"
 
 function mkcdir ()
 	mkdir -p -- "$argv[1]" &&

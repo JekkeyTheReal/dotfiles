@@ -1,0 +1,20 @@
+#!/bin/bash
+
+CONNECTION=$(cat ~/.config/network)
+
+CURRENT_BAND=$(nmcli -g 802-11-wireless.band connection show "$CONNECTION")
+
+if [[ "$CURRENT_BAND" == "a" ]]; then
+    NEW_BAND="bg"
+elif [[ "$CURRENT_BAND" == "bg" ]]; then
+    NEW_BAND="a"
+else
+    echo "Unknown current band: '$CURRENT_BAND'"
+    exit 1
+fi
+
+echo "Switching Wi-Fi band: $CURRENT_BAND -> $NEW_BAND"
+
+nmcli connection modify "$CONNECTION" 802-11-wireless.band "$NEW_BAND"
+nmcli connection down "$CONNECTION"
+nmcli connection up "$CONNECTION"
