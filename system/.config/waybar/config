@@ -1,6 +1,6 @@
 // -*- mode: jsonc -*-
 {
-    "output": "DP-1",
+    "output": "eDP-1",
     "layer": "bottom", // Waybar at (bottom|top) layer
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 30, // Waybar height (to be removed for auto height)
@@ -8,11 +8,11 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/mode",
-        "hyprland/scratchpad",
+        "sway/workspaces",
+        "sway/mode",
+        "sway/scratchpad",
         //"custom/media",
-        "hyprland/window"
+        "sway/window"
     ],
     "modules-center": [
         "mpris"
@@ -21,17 +21,15 @@
         //"idle_inhibitor",
         "custom/bt",
         "pulseaudio",
-        //"custom/g935",
         "network",
         "cpu",
         "memory",
         "temperature",
-        //"backlight",
+        "backlight",
         //"keyboard-state",
-        //"hyprland/language",
-        //"battery",
-        //"battery#bat2",
-        //"power-profiles-daemon",
+        //"sway/language",
+        "battery#bat1",
+        "power-profiles-daemon",
         "custom/clock",
         "custom/noti",
         "tray",
@@ -48,20 +46,20 @@
             "unlocked": ""
         }
     },
-    "hyprland/workspaces": {
+    "sway/workspaces": {
         "all-outputs": true
     },
-    "hyprland/mode": {
+    "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
-    "hyprland/scratchpad": {
+    "sway/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
         "format-icons": ["", ""],
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
-    "hyprland/window": {
+    "sway/window": {
         "format": " {title} ",
         "separate-outputs": false,
         "icon": true,
@@ -93,13 +91,13 @@
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },*/
-    "idle_inhibitor": {
+    /*"idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
             "activated": "",
             "deactivated": ""
         }
-    },
+    },*/
     "tray": {
         // "icon-size": 21,
         "spacing": 10
@@ -246,13 +244,13 @@
     "custom/bt": {
         "format": "  ",
         "on-click": "blueman-manager"
-    },
+    },/*
     "custom/g935": {
         "exec": "~/.config/waybar/headset_battery.sh",
         "interval": 60,
         "return-type": "json",
         "tooltip": true
         //"on-click": "upower -i /org/freedesktop/UPower/devices/headset_hidpp_battery_0 | grep percentage"
-    }
+    }*/
 
 }

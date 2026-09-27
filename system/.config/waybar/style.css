@@ -3,12 +3,13 @@
 @define-color gray rgb(45,52,54);
 @define-color green rgb(38,166,91);
 @define-color red rgb(235,77,75);
+@define-color orange rgb(245,149,60);
 
 @define-color bg rgba(20,20,60,0.8);
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "Noto Sans", "Font Awesome 7 Free", "Font Awesome 7 Free Solid", "JetBrainsMono Nerd Font";
+    font-family: "Noto Sans", "Font Awesome 6 Free", "Font Awesome 6 Free Solid", "JetBrainsMono Nerd Font";
     /*font-family: "D2CodingLigature Nerd Mono";*/
     font-size: 13px;
     min-height: 0;
@@ -94,7 +95,8 @@
   }
  
   /*#window, (active window name)*/
-  #custom-g935,
+	/*#custom-g935,*/
+	/*#language,*/
   #mpris,
   #custom-bt,
   #custom-noti,
@@ -155,8 +157,7 @@
   }
   
   #battery.warning:not(.charging) {
-    /*background-color: #f5953c;*/
-    color: #f5953c;
+    color: @orange;
     /*animation-name: blink;
     animation-duration: 1s;
     animation-timing-function: linear;
@@ -165,7 +166,6 @@
   }
   
   #battery.critical:not(.charging) {
-    /*background-color: #f53c3c;*/
     color: @red;
     /*animation-name: blink;
     animation-duration: 0.5s;
@@ -173,6 +173,26 @@
     animation-iteration-count: infinite;
     animation-direction: alternate;*/
   }
+
+	#power-profiles-daemon {
+		margin: 2px;                                                                                                  
+    padding-left: 4px;                                                                                            
+    padding-right: 4px;                                                                                           
+    background-color: @bg;                                                                                        
+    border-radius: 10px;
+	}
+
+	#power-profiles-daemon.performance {                                                                            
+    color: @red;                                                                                                
+  }   
+
+	#power-profiles-daemon.balanced {                                                                            
+    color: @orange;                                                                                                
+  }   
+
+	#power-profiles-daemon.power-saver {
+		color: @green;
+	}
   
   label:focus {
     background-color: @black;
@@ -200,10 +220,10 @@
     background-color: @red;
   }
  
-  /*
+  
   #pulseaudio.source.muted {
     color: @red;
-  }*/
+  }
 
   /*
   
