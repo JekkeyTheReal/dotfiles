@@ -6,6 +6,10 @@ export PATH="$HOME/.local/bin:$PATH"
 # aliases
 alias band="iw dev wlp0s20f3 link | grep freq | sed -e 's/^\s*//'"
 
+function clip ()
+	timeout -s SIGINT "$argv[1]" wf-recorder -f ~/Videos/clips/clip_$(date '+%Y-%m-%d_%H:%M:%S.mp4')
+end
+
 function mkcdir ()
 	mkdir -p -- "$argv[1]" &&
 	cd -- "$argv[1]"
@@ -37,3 +41,5 @@ end
 if status is-interactive
 # Commands to run in interactive sessions can go here
 end
+
+zoxide init fish --cmd cd | source
