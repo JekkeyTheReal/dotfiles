@@ -8,6 +8,7 @@ output eDP-1 scale 1.25 position 0 0
 # modifier
 set $mod Mod4
 set $modA Shift
+floating_modifier $mod normal
 
 # terminal
 set $term kitty
@@ -19,6 +20,9 @@ set $menu wofi --show run
 
 ### Autostart ###
 
+# notification daemon
+exec swaync
+
 # swaylock on lid close
 exec swayidle -w before-sleep 'swaylock -f'
 
@@ -27,13 +31,14 @@ exec swayidle -w \
     timeout 10 "brightnessctl --device='*kbd_backlight' --save set 0" \
     resume "brightnessctl --device='*kbd_backlight' --restore"
 
+
 ### Style ###
 
 default_border pixel 2
 default_floating_border pixel 2
 
 gaps inner 8
-gaps outer 4
+gaps outer 0
 
 # disable titlebar
 for_window [class="^.*"] border pixel 2
