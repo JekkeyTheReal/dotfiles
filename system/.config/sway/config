@@ -23,6 +23,9 @@ set $menu wofi --show run
 # notification daemon
 exec swaync
 
+# network gui applet
+exec nm-applet
+
 # swaylock on lid close
 exec swayidle -w before-sleep 'swaylock -f'
 
