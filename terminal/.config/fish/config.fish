@@ -3,6 +3,9 @@
 # PATH
 export PATH="$HOME/.local/bin:$PATH"
 
+# default editor
+export EDITOR=vim
+
 # aliases
 alias band="iw dev wlp0s20f3 link | grep freq | sed -e 's/^\s*//'"
 
@@ -13,6 +16,15 @@ end
 function mkcdir ()
 	mkdir -p -- "$argv[1]" &&
 	cd -- "$argv[1]"
+end
+
+function y
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	command yazi $argv --cwd-file="$tmp"
+	if read -z cwd < "$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
+		builtin cd -- "$cwd"
+	end
+	command rm -f -- "$tmp"
 end
 
 #promt vars
