@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONNECTION=$(cat ~/.config/network)
+	CONNECTION=$(iw dev wlp0s20f3 link | grep 'SSID:' | cut -d: -f2 | sed 's/^ *//')
 
 CURRENT_BAND=$(nmcli -g 802-11-wireless.band connection show "$CONNECTION")
 
