@@ -78,6 +78,7 @@ bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 bindsym XF86SelectiveScreenshot exec grimshot savecopy area 
+bindsym Print exec grimshot savecopy screen
 
 ### Layout ###
 
@@ -161,3 +162,6 @@ input type:pointer {
 	pointer_accel -0.2
 }
 
+### Windowrules ###
+
+for_window [class="feh"] floating enable, resize set 1280 720, move position center
