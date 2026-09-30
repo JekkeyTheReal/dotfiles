@@ -1,0 +1,8 @@
+@define-color white rgb(255,255,255);                                                                             
+@define-color black rgb(0,0,0);                                                                                   
+@define-color gray rgb(45,52,54);                                                                                 
+@define-color green rgb(38,166,91);                                                                               
+@define-color red rgb(235,77,75);                                                                                 
+@define-color orange rgb(245,149,60);                                                                             
+                                                                                                                  
+@define-color bg rgba(20,20,60,0.8);
