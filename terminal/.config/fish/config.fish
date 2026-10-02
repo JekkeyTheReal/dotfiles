@@ -9,6 +9,8 @@ export EDITOR=vim
 # aliases
 alias band="iw dev wlp0s20f3 link | grep freq | sed -e 's/^\s*//'"
 
+alias wetter="curl https://wttr.in/reutlingen"
+
 function clip ()
 	timeout -s SIGINT "$argv[1]" wf-recorder -f ~/Videos/clips/clip_$(date '+%Y-%m-%d_%H:%M:%S.mp4')
 end
@@ -27,12 +29,15 @@ function y
 	command rm -f -- "$tmp"
 end
 
-#promt vars
-set -g BG "222"
+# theme
+fish_config theme choose catppuccin-mocha-custom --color-theme=dark
+
+# promt vars
+set -g BG "1e1e2e"
 
 # Prompt
 function fish_prompt
-	printf '%s%s%s%s%s%s\n%s>%s ' (set_color {$BG}) (set_color -b {$BG}) (set_color $fish_color_cwd) (prompt_pwd) (set_color -b normal) (set_color {$BG}) (set_color $fish_color_cwd) (set_color normal)
+	printf '%s%s%s%s%s%s\n%s>%s ' (set_color {$BG}) (set_color -b {$BG}) (set_color $fish_color_cwd) (prompt_pwd -d 3) (set_color -b normal) (set_color {$BG}) (set_color $fish_color_cwd) (set_color normal)
 end
 
 # Right side promt

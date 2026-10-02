@@ -1,95 +1,16 @@
-@import "themes/bluebar.css";
+@import "themes/catppuccin-mocha.css";
 
-* {
-    /* `otf-font-awesome` is required to be installed for icons */
+/*not -> include gtk for applets*/
+*:not(menu):not(menuitem):not(separator):not(check):not(radio):not(arrow):not(popover) {
+		all: initial; /*<- ignore gtk theme*/
     font-family: "Noto Sans", "Font Awesome 6 Free", "Font Awesome 6 Free Solid", "JetBrainsMono Nerd Font";
-    /*font-family: "D2CodingLigature Nerd Mono";*/
     font-size: 13px;
     min-height: 0;
-
-    /*--red: #c9545d;*/
-  }
-  
-  window#waybar {
-    background: transparent;
-    /*    background-color: rgba(43, 48, 59, 0.5); */
-    /*    border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-    color: @white;
-    transition-property: background-color;
-    transition-duration: .5s;
-  }
-  
-  window#waybar.hidden {
-    opacity: 0.2;
-  }
-  
-  #waybar.empty #window {
-    background-color: transparent;
-  }
-  
-  #workspaces {
-  }
-  
-  #window {
-    margin: 2;
-    padding-left: 8;
-    padding-right: 8;
-    background-color: @bg;
-    font-size: 14px;
-    font-weight: bold;
-  }
-  
-  button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 5px;
-  }
-  
-  /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-  button:hover {
-    background: inherit;
-    text-shadow: inherit;
-    border-top: 2px solid @red;
-  }
-  
-  #workspaces button {
-    padding: 0 4px;
-    background-color: @bg;
-    color: @gray;
-    /*    background-color: rgba(0,0,0,0.3); */
-  }
-  
-  #workspaces button:hover {
-  }
-  
-  #workspaces button.focused {
-    /*    box-shadow: inset 0 -2px #c9545d; */
-    background-color: @bg;
-    color: @red;
-    border-top: 2px solid red;
-  }
-  
-  #workspaces button.active {
-    /*    box-shadow: inset 0 -2px #c9545d; */
-    background-color: @bg;
-    color: @red;
-    border-top: 2px solid @red;
-  }
-  
-  #workspaces button.urgent {
-    background-color: @red;
-  }
-  
-  #mode {
-    background-color: @gray;
-    border-bottom: 3px solid @white;
   }
  
-  /*#window, (active window name)*/
-	/*#custom-g935,*/
+	/*#window, (active window name)*/
 	/*#language,*/
+	#workspaces,
   #mpris,
   #custom-bt,
   #custom-noti,
@@ -106,27 +27,87 @@
   #wireplumber,
   #custom-media,
   #tray,
-  #mode,
-  #idle_inhibitor,
-  #scratchpad,
+  /*#mode,*/
+  /*#idle_inhibitor,*/
+  /*#scratchpad,*/
   #window {
     margin: 2px;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
     background-color: @bg;
     color: @white;
     border-radius: 10px;
   }
+
+  window#waybar {
+    background: transparent;
+    color: @white;
+    transition-property: background-color;
+    transition-duration: .5s;
+  }
+  
+  window#waybar.hidden {
+    opacity: 0.2;
+  }
+  
+	/*hide window module on empty workspace*/
+  #waybar.empty #window {
+    background-color: transparent;
+  }
+
+	#window label {
+		color: @white;
+		font-weight: bold;
+	}
+  
+  button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 5px;
+  }
+  
+  /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+  button:hover {
+    background: inherit;
+    text-shadow: inherit;
+    border-top: 2px solid @red;
+  }
+   
+  /*#mode {
+    background-color: @gray;
+    border-bottom: 3px solid @white;
+  }*/
+ 
+  
+
+  #workspaces button {
+    padding: 0 6px;
+  }
+  
+  #workspaces button:hover {
+  }
+  
+  #workspaces button.focused {
+    background-color: @gray;
+    color: @red;
+    border-top: 2px solid @red;
+  }
+  
+  #workspaces button.active { /*active = focused when 1 monitor*/
+    color: @red;
+    border-top: 2px solid @orange;
+  }
+  
+  #workspaces button.urgent {
+    background-color: @red;
+  }
   
   /* If workspaces is the leftmost module, omit left margin */
-  .modules-left > widget:first-child > #workspaces {
+  /*.modules-left > widget:first-child > #workspaces {
     margin-left: 0;
-  }
-  
-  /* If workspaces is the rightmost module, omit right margin */
-  .modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
-  }
+  }*/
   
   #clock {
     font-size:14px;
@@ -138,7 +119,7 @@
   }
   
   #battery.charging, #battery.plugged {
-    color: @white;
+    color: @black;
     background-color: @green;
   }
   
@@ -168,20 +149,20 @@
   }
 
 	#power-profiles-daemon {
-		margin: 2px;                                                                                                  
-    padding-left: 4px;                                                                                            
-    padding-right: 4px;                                                                                           
-    background-color: @bg;                                                                                        
+		margin: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    background-color: @bg;
     border-radius: 10px;
 	}
 
-	#power-profiles-daemon.performance {                                                                            
-    color: @red;                                                                                                
-  }   
+	#power-profiles-daemon.performance {
+    color: @red;
+  }
 
-	#power-profiles-daemon.balanced {                                                                            
-    color: @orange;                                                                                                
-  }   
+	#power-profiles-daemon.balanced {
+    color: @orange;
+  }
 
 	#power-profiles-daemon.power-saver {
 		color: @green;
@@ -198,11 +179,12 @@
   #temperature.critical {
     background-color: @red;
   }
-  
+ 
+ 	/*
   #idle_inhibitor.activated {
     background-color: @white;
     color: @gray;
-  }
+  }*/
   
   #tray > .passive {
     -gtk-icon-effect: dim;
@@ -214,22 +196,7 @@
   }
  
   
-  #pulseaudio.source.muted {
-    color: @red;
-  }
-
   /*
-  
   window#waybar.solo {
   background-color: #FFFFFF;
-  }
-  
-  window#waybar.termite {
-  background-color: #3F3F3F;
-  }
-  
-  window#waybar.chromium {
-  background-color: #000000;
-  border: none;
-  }
-   */
+  }*/

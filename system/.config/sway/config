@@ -43,6 +43,11 @@ default_floating_border pixel 2
 gaps inner 8
 gaps outer 0
 
+client.focused #000000 #74c7ec #000000 
+client.focused_inactive #000000 #6c7086 #000000 
+client.unfocused #000000 #181825 #000000
+
+
 # disable titlebar
 for_window [class="^.*"] border pixel 2
 
@@ -138,7 +143,7 @@ bar {
 
 ### Wallpaper ###
 
-output * bg ~/Pictures/wallpapers/fedora_wallpaper.png fill
+output * bg ~/Pictures/wallpapers/violet-2-mocha.png fill
 
 
 ### Input ###
