@@ -1,0 +1,51 @@
+@define-color bg #1e1e2ea0;
+@define-color red #ff0000;
+
+window#osd {
+  border-radius: 1em;
+  border: none;
+  background: @bg;
+
+  #container {
+    margin: 16px;
+  }
+
+  image,
+  label {
+    color: @red;
+  }
+
+  progressbar:disabled,
+  image:disabled {
+    opacity: 0.5;
+  }
+
+  progressbar,
+  segmentedprogress {
+    min-height: 6px;
+    border-radius: 999px;
+    background: transparent;
+    border: none;
+  }
+  trough,
+  segment {
+    min-height: inherit;
+    border-radius: inherit;
+    border: none;
+    background: @red;
+  }
+  progress,
+  segment.active {
+    min-height: inherit;
+    border-radius: inherit;
+    border: none;
+    background: @red;
+  }
+
+  segment {
+    margin-left: 8px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}

@@ -20,11 +20,9 @@ set $menu wofi --show run
 
 ### Autostart ###
 
-# notification daemon
-exec swaync
-
-# network gui applet
-exec nm-applet
+exec swaync 				# notification daemon
+exec nm-applet 			#	network gui applet
+exec swayosd-server # swayosd overlay daemon
 
 # swaylock on lid close
 exec swayidle -w before-sleep 'swaylock -f'
@@ -71,17 +69,17 @@ bindsym $mod+Down 	focus down
 
 # move window
 bindsym $mod+$modA+Left 	move left
-bindsym $mod+$modA+Right move right
+bindsym $mod+$modA+Right 	move right
 bindsym $mod+$modA+Up 		move up
 bindsym $mod+$modA+Down 	move down
 
 # function keys
-bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
-bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
-bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym XF86AudioMute 				exec swayosd-client --output-volume mute-toggle #wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioLowerVolume 	exec swayosd-client --output-volume -5 #wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioRaiseVolume 	exec swayosd-client --output-volume 5 #wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioMicMute 			exec swayosd-client --input-volume mute-toggle #wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+bindsym XF86MonBrightnessDown exec swayosd-client --brightness lower #brightnessctl set 5%-
+bindsym XF86MonBrightnessUp 	exec swayosd-client --brightness raise #brightnessctl set 5%+
 bindsym XF86SelectiveScreenshot exec grimshot savecopy area 
 bindsym Print exec grimshot savecopy screen
 

@@ -265,6 +265,7 @@ sway-config-fedora
 swaybg
 swayidle
 swaylock
+swayosd
 symlinks
 system-config-language
 system-config-printer
