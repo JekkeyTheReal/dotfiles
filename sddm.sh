@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo stow --dir="$HOME/dotfiles" --target=/usr/share sddm-dontstow
+sudo cp -r ~/dotfiles/sddm-dontstow/sddm/themes/catppuccin-mocha-sapphire /usr/share/sddm/themes/
