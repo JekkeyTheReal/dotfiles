@@ -90,8 +90,6 @@
   }
   
   #workspaces button.focused {
-    background-color: @gray;
-    color: @red;
     border-top: 2px solid @red;
   }
   
