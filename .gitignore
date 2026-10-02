@@ -1,1 +1,7 @@
 .netrwhist
+
+terminal/.local/bin/*
+!terminal/.local/bin/chbd
+
+media/.config/vesktop/*
+!media/.config/vesktop/themes/
