@@ -109,6 +109,7 @@ glibc-all-langpacks
 gnome-disk-utility
 gnome-keyring-pam
 gnupg2
+godot
 grim
 grub2-efi-ia32
 grub2-efi-ia32-cdboot
@@ -163,6 +164,7 @@ kitty
 less
 libertas-firmware
 libglvnd-gles
+libreoffice
 libva-intel-media-driver
 livesys-scripts
 logrotate
@@ -229,6 +231,7 @@ psacct
 pulseaudio-utils
 qcom-wwan-firmware
 qemu-guest-agent
+qrencode
 quota
 realmd
 realtek-firmware
@@ -238,6 +241,7 @@ rsync
 rsyslog
 samba
 samba-client
+sassc
 sddm
 sddm-wayland-sway
 selinux-policy-targeted
@@ -285,6 +289,7 @@ unzip
 usb_modeswitch
 usbutils
 util-linux
+vesktop
 vim-enhanced
 vim-minimal
 virtualbox-guest-additions
