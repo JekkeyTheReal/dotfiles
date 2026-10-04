@@ -27,7 +27,7 @@
         "backlight",
         //"keyboard-state",
         //"sway/language",
-        "battery#bat1",
+        "battery",
         "power-profiles-daemon",
         "custom/clock",
         "custom/noti",
@@ -132,9 +132,9 @@
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "battery": {
-        "bat": "BAT1",
         "states": {
-            // "good": 95,
+						"full": 100,
+            "good": 90,
             "warning": 30,
             "critical": 15
         },
@@ -146,9 +146,6 @@
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
     },
     "power-profiles-daemon": {
       "format": "{icon}",

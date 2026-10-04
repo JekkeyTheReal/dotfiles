@@ -127,6 +127,14 @@
       color: @black;
     }
   }
+
+	#battery.full:not(.charging) {
+		color: @purple;
+	}
+
+	#battery.full.charging {
+		background-color: @purple;
+	}
   
   #battery.warning:not(.charging) {
     color: @orange;
