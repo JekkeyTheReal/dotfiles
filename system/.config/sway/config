@@ -14,7 +14,7 @@ floating_modifier $mod normal
 set $term kitty
 
 # launcher
-set $dmenu wofi --show drun
+set $dmenu wofi -a --show drun
 set $menu wofi --show run
 
 

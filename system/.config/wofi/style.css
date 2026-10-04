@@ -1,10 +1,14 @@
 /*https://man.archlinux.org/man/wofi.5.en*/
 
+@define-color text #cdd6f4;
+@define-color crust #11111b;
+@define-color base-trans rgba(30, 30, 46, 0.9);
+@define-color sapphire-trans rgba(116, 199, 236, 0.5);
+
 window {
     border-radius: 1em;
     font-size: 1em;
-    color: #fff;
-    background-color: rgba(30, 30, 46, 0.9);
+    background-color: @base-trans;
     background-image: url(".config/wofi/mikucel.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -16,29 +20,30 @@ window {
     box-shadow: none;
     margin: 0;
     margin-bottom: .2em;
-    color: #fff;
+    color: @text;
     background-color: transparent;
 }
 
 #entry {
     margin-left: .5em;
+		color: @text;
+}
+
+#entry:selected {
+    outline: none;
+    border-radius: 1em;
+    border-color: transparent;
+    background-color: @sapphire-trans;
+		color: @crust;
+}
+
+#expander-box {
+  background-color: transparent;
+  color: @text;
 }
 
 #img {
 		margin-right: .25em;
-}
-
-#entry:selected {
-    outline:none;
-    border-radius: 1em;
-    border-color: transparent;
-    background-color: rgba(116, 199, 236, 0.5);
-		color: #1e1e2e;
-}
-
-#expander-box {
-  background-color: rgba(0,0,0,0);
-  color: #fff;
 }
 
 /*
