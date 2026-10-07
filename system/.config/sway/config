@@ -168,3 +168,5 @@ input type:pointer {
 ### Windowrules ###
 
 for_window [class="feh"] floating enable, resize set 1280 720, move position center
+for_window [app_id="blueman-manager"] floating enable, resize set 1280 720, move position cursor
+for_window [app_id="org.pulseaudio.pavucontrol"] floating enable, resize set 1280 720, move position cursor
