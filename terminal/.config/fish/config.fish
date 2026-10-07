@@ -4,7 +4,8 @@
 export PATH="$HOME/.local/bin:$PATH"
 
 # default editor
-export EDITOR=vim
+export EDITOR=nvim
+alias vim=nvim
 
 # aliases
 alias band="iw dev wlp0s20f3 link | grep freq | sed -e 's/^\s*//'"
