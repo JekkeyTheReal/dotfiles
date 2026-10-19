@@ -49,6 +49,7 @@ bzip2
 chrony
 cifs-utils
 cirrus-audio-firmware
+clang-tools-extra
 cmake
 colord
 compsize
@@ -101,8 +102,10 @@ fish
 fpaste
 fprintd-pam
 fwupd
+gcc
 ghostscript
 git-core
+git-lfs
 gitleaks
 glibc
 glibc-all-langpacks
@@ -155,13 +158,17 @@ iwlwifi-mvm-firmware
 kanshi
 kbd
 kbd-legacy
+kdenlive
 kernel
 kernel-core
 kernel-modules
+kernel-modules-core
 kernel-modules-extra
 kexec-tools
 kitty
+krita
 less
+libaacs
 libertas-firmware
 libglvnd-gles
 libreoffice
@@ -189,6 +196,7 @@ mt7xxx-firmware
 mtr
 ncdu
 ncurses
+neovim
 net-tools
 network-manager-applet
 nfs-utils
@@ -201,6 +209,7 @@ nvme-cli
 nvtop
 nwg-wrapper
 nxpwireless-firmware
+ollama
 open-vm-tools-desktop
 opensc
 openssh-clients
@@ -229,6 +238,8 @@ prefixdevname
 procps-ng
 psacct
 pulseaudio-utils
+python3.13
+python3.13-devel
 qcom-wwan-firmware
 qemu-guest-agent
 qrencode
@@ -237,6 +248,8 @@ realmd
 realtek-firmware
 rootfiles
 rpm
+rpmfusion-free-release
+rpmfusion-nonfree-release
 rsync
 rsyslog
 samba
@@ -258,6 +271,7 @@ spice-webdavd
 sssd-common
 sssd-kcm
 sssd-proxy
+steam
 stow
 sudo
 sway
