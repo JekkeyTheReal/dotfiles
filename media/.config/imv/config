@@ -3,3 +3,4 @@
 
 [options]
 background = 1e1e2e
+upscaling_method = nearest_neighbour
