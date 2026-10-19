@@ -1,6 +1,10 @@
 ### Monitors ###
 
-output eDP-1 scale 1.25 position 0 0
+output eDP-1 scale 1.25 position 0 0 
+
+##bildschirmtest
+#output DP-4 scale 1 position 0 -1200
+#output DP-3 scale 1 position 2560 -1200 transform 90
 
 
 ### Variables ###
@@ -159,6 +163,7 @@ input type:keyboard {
 input type:touchpad {
 	natural_scroll enabled
 	tap enabled
+	dwt disabled
 }
 
 input type:pointer {
@@ -168,5 +173,9 @@ input type:pointer {
 ### Windowrules ###
 
 for_window [class="feh"] floating enable, resize set 1280 720, move position center
+for_window [app_id="imv"] floating enable, resize set 1280 720, move position center
+#for_window [app_id="mpv"] floating enable, resize set 1280 720, move position cursor
 for_window [app_id="blueman-manager"] floating enable, resize set 1280 720, move position cursor
 for_window [app_id="org.pulseaudio.pavucontrol"] floating enable, resize set 1280 720, move position cursor
+
+for_window [title="Blender Render"] floating enable
