@@ -1,0 +1,18 @@
+[Default Applications]
+application/pdf=org.mozilla.firefox.desktop
+text/plain=userapp-vim-YCM4V3.desktop
+x-scheme-handler/jetbrains=jetbrainsd.desktop
+x-scheme-handler/discord=vesktop.desktop
+x-scheme-handler/discord-1480978256919265390=discord-1480978256919265390.desktop
+image/jpeg=imv-dir.desktop
+application/octet-stream=imv-dir.desktop
+image/png=imv-dir.desktop
+image/gif=imv-dir.desktop
+
+[Added Associations]
+application/pdf=org.mozilla.firefox.desktop;
+text/plain=userapp-vim-YCM4V3.desktop;
+image/gif=imv.desktop;imv-dir.desktop;
+image/png=imv.desktop;imv-dir.desktop;feh.desktop;
+image/jpeg=imv-dir.desktop;feh.desktop;
+application/octet-stream=imv-dir.desktop;
