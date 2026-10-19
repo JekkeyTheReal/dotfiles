@@ -12,8 +12,10 @@ alias band="iw dev wlp0s20f3 link | grep freq | sed -e 's/^\s*//'"
 
 alias wetter="curl https://wttr.in/reutlingen"
 
+alias bd-play="mpv bd:// --bluray-device=/dev/sr0"
+
 function clip ()
-	timeout -s SIGINT "$argv[1]" wf-recorder -f ~/Videos/clips/clip_$(date '+%Y-%m-%d_%H:%M:%S.mp4')
+	timeout -s SIGINT "$argv[1]" wf-recorder -f ~/Videos/clips/clip_$(date '+%Y-%m-%d_%H:%M:%S.mp4') --audio --audio-backend=pipewire --framerate 30
 end
 
 function mkcdir ()
