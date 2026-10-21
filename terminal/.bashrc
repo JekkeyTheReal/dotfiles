@@ -28,3 +28,8 @@ PS1="${BLACK}${BG}${CYAN}\w${DEFBG}${BLACK}\n${CYAN}>${RESET} "
 #PS1='[\u@\h \W]\$ '
 
 export XDG_DATA_DIRS="$HOME/.local/share:${XDG_DATA_DIRS}"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/jekkey/.lmstudio/bin"
+# End of LM Studio CLI section
+

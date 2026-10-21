@@ -3,12 +3,24 @@
 # PATH
 export PATH="$HOME/.local/bin:$PATH"
 
+# default editor
+export EDITOR=vim
+
 # aliases
 alias lsa="ls -A --color=auto"
 
 function mkcdir ()
 	mkdir -p -- "$argv[1]" &&
 	cd -- "$argv[1]"
+end
+
+function y
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	command yazi $argv --cwd-file="$tmp"
+	if read -z cwd < "$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
+		builtin cd -- "$cwd"
+	end
+	command rm -f -- "$tmp"
 end
 
 #promt vars
@@ -37,3 +49,10 @@ end
 if status is-interactive
 # Commands to run in interactive sessions can go here
 end
+
+zoxide init fish --cmd cd | source
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /home/jekkey/.lmstudio/bin
+# End of LM Studio CLI section
+
