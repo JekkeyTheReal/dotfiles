@@ -27,6 +27,8 @@ set $menu wofi --show run
 exec swaync 				# notification daemon
 exec nm-applet 			#	network gui applet
 exec swayosd-server # swayosd overlay daemon
+exec systemctl --user import-environment WAYLAND_DISPLAY DISPLAY
+exec systemctl --user start opentabletdriver.service
 
 # swaylock on lid close
 exec swayidle -w before-sleep 'swaylock -f'
@@ -64,6 +66,7 @@ bindsym $mod+L reload
 bindsym $mod+E exec thunar
 bindsym $mod+M exec swaymsg exit
 bindsym $mod+P exec systemctl suspend
+bindsym $mod+H exec 'toggle-tablet'
 
 # move focus
 bindsym $mod+Left 	focus left
