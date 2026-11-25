@@ -192,6 +192,7 @@ microcode_ctl
 minicom
 mpage
 mpv
+mpv-mpris
 mt7xxx-firmware
 mtr
 ncdu
@@ -214,6 +215,7 @@ open-vm-tools-desktop
 opensc
 openssh-clients
 openssh-server
+opentabletdriver
 pamtester
 paps
 parted
@@ -238,6 +240,7 @@ prefixdevname
 procps-ng
 psacct
 pulseaudio-utils
+pv
 python3.13
 python3.13-devel
 qcom-wwan-firmware
