@@ -3,7 +3,7 @@
 /*not -> include gtk for applets*/
 *:not(menu):not(menuitem):not(separator):not(check):not(radio):not(arrow):not(popover) {
 		all: initial; /*<- ignore gtk theme*/
-    font-family: "Noto Sans", "Font Awesome 6 Free", "Font Awesome 6 Free Solid", "JetBrainsMono Nerd Font";
+    font-family: "Noto Sans" /*"Font Awesome 6 Free", "Font Awesome 6 Free Solid", "JetBrainsMono Nerd Font",*/; 
     font-size: 13px;
     min-height: 0;
   }
@@ -27,9 +27,6 @@
   #wireplumber,
   #custom-media,
   #tray,
-  /*#mode,*/
-  /*#idle_inhibitor,*/
-  /*#scratchpad,*/
   #window {
     margin: 2px;
     padding-left: 6px;
@@ -75,13 +72,6 @@
     border-top: 2px solid @red;
   }
    
-  /*#mode {
-    background-color: @gray;
-    border-bottom: 3px solid @white;
-  }*/
- 
-  
-
   #workspaces button {
     padding: 0 6px;
   }
@@ -101,11 +91,6 @@
   #workspaces button.urgent {
     background-color: @red;
   }
-  
-  /* If workspaces is the leftmost module, omit left margin */
-  /*.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-  }*/
   
   #clock {
     font-size:14px;
@@ -138,20 +123,10 @@
   
   #battery.warning:not(.charging) {
     color: @orange;
-    /*animation-name: blink;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;*/
   }
   
   #battery.critical:not(.charging) {
     color: @red;
-    /*animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;*/
   }
 
 	#power-profiles-daemon {
@@ -185,12 +160,6 @@
   #temperature.critical {
     background-color: @red;
   }
- 
- 	/*
-  #idle_inhibitor.activated {
-    background-color: @white;
-    color: @gray;
-  }*/
   
   #tray > .passive {
     -gtk-icon-effect: dim;
